@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Data
@@ -27,4 +28,5 @@ public class User {
 
     @ElementCollection
     private List<Integer> userReservation = new ArrayList<>();
+
 }
