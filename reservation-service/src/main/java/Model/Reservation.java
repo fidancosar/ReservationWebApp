@@ -1,8 +1,6 @@
 package Model;
 
 
-import Dto.ReservationDto;
-import Dto.ReservationIdDto;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;

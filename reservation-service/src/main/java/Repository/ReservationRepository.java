@@ -1,7 +1,6 @@
 package Repository;
 
 
-import Dto.ReservationIdDto;
 import Model.Reservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
