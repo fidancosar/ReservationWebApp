@@ -43,7 +43,15 @@ public class UserService {
     }
 
     public void addReservation(AddReservationRequest request){
-        Integer
+        Integer reservationId = reservationServiceClient.getReservationByReservationId(request.getReservationCode()).getBody().getReservationId;
+
+        User user = userRepository.findById(request.getUserId())
+                .orElseThrow() -> new UserNotFoundException("User could not found by user id: " + request.getUserId));
+
+        User.getUserReservation()
+                .add(reservationId);
+
+        userRepository.save(reservation);
     }
 
 }

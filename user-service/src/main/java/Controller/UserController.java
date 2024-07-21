@@ -1,6 +1,7 @@
 package Controller;
 
 import Business.UserService;
+import Dto.AddReservationRequest;
 import Dto.UserDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,5 +24,11 @@ public class UserController {
     @PostMapping
     public ResponseEntity<UserDto> createUser(){
         return ResponseEntity.ok(userService.createUser());
+    }
+
+    @PutMapping
+    public ResponseEntity<Void> addReservation(@RequestBody AddReservationRequest request) {
+        userService.addReservation(request);
+        return ResponseEntity.ok().build();
     }
 }
