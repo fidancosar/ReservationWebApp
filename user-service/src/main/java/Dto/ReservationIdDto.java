@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class ReservationIdDto {
-    private Integer reservationId;
-    private Integer reservationCode;
+    private String reservationId;
+    private String reservationCode;
 
-    public static ReservationIdDto convert(Integer reservationId, Integer reservationCode) {
+    public static ReservationIdDto convert(String reservationId, String reservationCode) {
         return new ReservationIdDto(reservationId, reservationCode);
     }
 

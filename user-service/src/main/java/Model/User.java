@@ -21,13 +21,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="user_id")
-    private Integer userId;
+    private String userId;
     @Column(name = "user_name")
     private String userName;
     @Column(name = "user_surname")
     private String userSurname;
 
     @ElementCollection
-    private List<Integer> userReservation = new ArrayList<>();
+    private List<String> userReservation = new ArrayList<>();
 
 }

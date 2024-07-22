@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddReservationRequest {
-    private Integer userId;
-    private Integer reservationCode;
+    private String userId;
+    private String reservationCode;
 }

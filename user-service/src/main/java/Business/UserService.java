@@ -24,7 +24,7 @@ public class UserService {
     }
 
 
-    public UserDto getAlReservationByUserId(Integer userId) {
+    public UserDto getAlReservationByUserId(String userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ReservationNotFoundException("Reservation could not found by id: "+ userId));
 
@@ -43,7 +43,7 @@ public class UserService {
     }
 
     public void addReservation(AddReservationRequest request){
-        Integer reservationId = reservationServiceClient.getReservationByReservationCode(request.getReservationCode()).getBody().getReservationId();
+        String reservationId = reservationServiceClient.getReservationByReservationCode(request.getReservationCode()).getBody().getReservationId();
 
         User user = userRepository.findById(request.getUserId())
                 .orElseThrow(()-> new UserNotFoundException("User could not found by user id: " + request.getUserId()));

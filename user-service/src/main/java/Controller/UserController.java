@@ -18,7 +18,7 @@ public class UserController {
     }
 
     @GetMapping("{userId}")
-    public ResponseEntity<UserDto> getUserById(@PathVariable Integer userId) {
+    public ResponseEntity<UserDto> getUserById(@PathVariable String userId) {
         return ResponseEntity.ok(userService.getAlReservationByUserId(userId));
     }
 

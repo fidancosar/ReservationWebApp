@@ -11,9 +11,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDto {
-    private Integer userId;
+    private String userId;
     private List<ReservationDto> userReservationList = new ArrayList<>();
 
-    public UserDto(Integer userId) {
+    public UserDto(String userId) {
     }
 }

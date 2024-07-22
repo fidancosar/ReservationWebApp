@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ReservationDto {
     private ReservationIdDto reservationId;
-    private Integer reservationCode;
+    private String reservationCode;
 
 }

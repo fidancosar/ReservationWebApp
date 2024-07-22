@@ -28,11 +28,11 @@ public class ReservationController {
         return ResponseEntity.ok(reservationService.getAllReservation());
     }
     @GetMapping("/reservationcode/{reservationcode}")
-    public ResponseEntity<ReservationIdDto> getreservationCode(@PathVariable @NotEmpty Integer reservationCode) {
+    public ResponseEntity<ReservationIdDto> getreservationCode(@PathVariable @NotEmpty String reservationCode) {
         return ResponseEntity.ok(reservationService.findReservationByReservationCode((reservationCode)));
     }
     @GetMapping("/reservation/{reservationid}")
-    public ResponseEntity<ReservationDto> getReservationById(@PathVariable @NotEmpty Integer reservationid) {
+    public ResponseEntity<ReservationDto> getReservationById(@PathVariable @NotEmpty String reservationid) {
         return ResponseEntity.ok(reservationService.findReservationDetailsByReservationId((reservationid)));
     }
 

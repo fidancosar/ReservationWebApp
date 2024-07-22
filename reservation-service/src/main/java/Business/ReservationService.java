@@ -3,6 +3,7 @@ package Business;
 
 import Dto.ReservationDto;
 import Dto.ReservationIdDto;
+import Model.Reservation;
 import Repository.ReservationRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -24,16 +25,20 @@ public class ReservationService {
                 .collect(Collectors.toList());
 
     }
-    public ReservationIdDto findReservationByReservationCode(Integer reservationCode) {
+
+    public ReservationIdDto findReservationByReservationCode(String reservationCode) {
         return reservationRepository.findReservationByReservationCode(reservationCode)
                 .map(reservation -> new ReservationIdDto(reservation.getReservationId(), reservation.getReservationCode()))
                 .orElseThrow(() -> new ReservationNotFoundException("Reservation could not found by reservation code: " +reservationCode));
     }
 
 
-    public ReservationDto findReservationDetailsByReservationId(Integer reservationId) {
+    public ReservationDto findReservationDetailsByReservationId(String reservationId) {
         return reservationRepository.findById(reservationId)
                 .map(ReservationDto::convert)
                 .orElseThrow(()-> new ReservationNotFoundException("Reservation could not found by reservation id: " +reservationId));
     }
+
+
 }
+
