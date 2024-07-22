@@ -10,7 +10,13 @@ public class GeneralExceptionHandler {
 
 
     @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<?> handleReservationNotFoundException(UserNotFoundException exception) {
+    public ResponseEntity<?> handle(UserNotFoundException exception) {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(ReservationNotFoundException.class)
+    public ResponseEntity<ExceptionMessage> handle(ReservationNotFoundException exception){
+        return new ResponseEntity<>(exception.getExceptionMessage(), HttpStatus.resolve(exception.getExceptionMessage().status()));
+    }
 }
+

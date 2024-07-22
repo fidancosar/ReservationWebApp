@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v1/user")
+
 public class UserController {
 
     private final UserService userService;
@@ -18,7 +19,7 @@ public class UserController {
 
     @GetMapping("{userId}")
     public ResponseEntity<UserDto> getUserById(@PathVariable Integer userId) {
-        return ResponseEntity.ok(userService.getAllUserByUserId(userId));
+        return ResponseEntity.ok(userService.getAlReservationByUserId(userId));
     }
 
     @PostMapping

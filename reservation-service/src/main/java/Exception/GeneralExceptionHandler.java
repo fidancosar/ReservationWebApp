@@ -12,4 +12,6 @@ public class GeneralExceptionHandler {
     public ResponseEntity<?> handleReservationNotFoundException(ReservationNotFoundException exception) {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
+
+
 }
