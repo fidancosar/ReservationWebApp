@@ -18,8 +18,6 @@ import java.util.List;
 @RequestMapping("/v1/reservation")
 @RequiredArgsConstructor
 @Validated
-
-
 public class ReservationController {
     private final ReservationService reservationService;
 

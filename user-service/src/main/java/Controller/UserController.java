@@ -27,6 +27,7 @@ public class UserController {
         return ResponseEntity.ok(userService.createUser());
     }
 
+
     @PutMapping
     public ResponseEntity<Void> addReservation(@RequestBody AddReservationRequest request) {
         userService.addReservation(request);
